@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANISHA - Advanced Neural Intelligent System for Human Assistance</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+</head>
+<body>
+    <!-- Animated Starfield Background -->
+    <div id="starfield"></div>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header with AI Core -->
+        <header class="header">
+            <div class="ai-core-container">
+                <div class="ai-core">
+                    <div class="core-ring ring-1"></div>
+                    <div class="core-ring ring-2"></div>
+                    <div class="core-ring ring-3"></div>
+                    <div class="core-center"></div>
+                    <div class="core-glow"></div>
+                </div>
+                <div class="ai-status">
+                    <h1 class="ai-name" id="ai-name">ANISHA</h1>
+                    <div class="status-indicator">
+                        <span class="status-dot" id="status-dot"></span>
+                        <span class="status-text" id="status-text">Ready</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="header-controls">
+                <button class="control-btn" id="sound-toggle" title="Toggle Sound Effects">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <button class="control-btn" id="theme-toggle" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="control-btn" id="settings-btn" title="Settings">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+        </header>
+        
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Conversation Panel -->
+            <section class="panel conversation-panel">
+                <div class="panel-header">
+                    <h2><i class="fas fa-comments"></i> Conversation</h2>
+                    <div class="panel-controls">
+                        <button class="panel-btn" id="clear-chat" title="Clear Conversation">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                        <button class="panel-btn" id="export-chat" title="Export Conversation">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="panel-body" id="conversation">
+                    <div class="message ai-message">
+                        <div class="message-avatar">
+                            <div class="avatar-pulse"></div>
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="message-content">
+                            <div class="message-sender">ANISHA</div>
+                            <div class="message-text">Hello! I'm ANISHA, your Advanced Neural Intelligent System for Human Assistance. How can I help you today?</div>
+                            <div class="message-time">Just now</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <div class="input-container">
+                        <div class="voice-indicator" id="voice-indicator">
+                            <div class="voice-pulse"></div>
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <input type="text" id="user-input" placeholder="Type your message or say 'Hey Anisha'..." autocomplete="off">
+                        <button class="input-btn" id="send-btn" title="Send Message">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <button class="input-btn voice-btn" id="voice-btn" title="Voice Input">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                    </div>
+                    <div class="input-hint">
+                        <span class="wake-hint"><i class="fas fa-bullhorn"></i> Wake phrase: "Hey Anisha"</span>
+                        <span class="mode-hint"><i class="fas fa-code"></i> Try: "Switch to programming mode" or "Explain black holes"</span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Features Panel -->
+            <section class="features-section">
+                <!-- Programming Assistant Panel -->
+                <div class="panel feature-panel programming-panel">
+                    <div class="panel-header">
+                        <h2><i class="fas fa-code"></i> Programming Assistant</h2>
+                        <button class="mode-btn" id="programming-mode-btn" data-mode="programming">Activate</button>
+                    </div>
+                    <div class="panel-body">
+                        <div class="feature-description">
+                            <p>I can write, explain, debug, and generate complete projects in:</p>
+                            <div class="skill-tags">
+                                <span class="skill-tag">HTML/CSS</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Node.js</span>
+                            </div>
+                        </div>
+                        <div class="feature-example">
+                            <div class="code-snippet">
+                                <div class="code-header">
+                                    <span class="code-language">JavaScript</span>
+                                    <button class="copy-code" title="Copy code">
+                                        <i class="far fa-copy"></i>
+                                    </button>
+                                </div>
+                                <pre><code>// Example: Fetch API with error handling
+async function fetchData(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return await response.json();
+  } catch (error) {
+    console.error("Fetch error:", error);
+    return null;
+  }
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Astronomy Panel -->
+                <div class="panel feature-panel astronomy-panel">
+                    <div class="panel-header">
+                        <h2><i class="fas fa-star"></i> Astronomy Mode</h2>
+                        <button class="mode-btn" id="astronomy-mode-btn" data-mode="astronomy">Activate</button>
+                    </div>
+                    <div class="panel-body">
+                        <div class="feature-description">
+                            <p>Explore the cosmos with updated 2026 astronomy data:</p>
+                            <div class="astronomy-events">
+                                <div class="event">
+                                    <span class="event-date">Mar 14, 2026</span>
+                                    <span class="event-name">Total Solar Eclipse</span>
+                                </div>
+                                <div class="event">
+                                    <span class="event-date">Jul 27, 2026</span>
+                                    <span class="event-name">Lunar Perigee (Supermoon)</span>
+                                </div>
+                                <div class="event">
+                                    <span class="event-date">Aug 12, 2026</span>
+                                    <span class="event-name">Perseid Meteor Shower Peak</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-example">
+                            <div class="astronomy-fact">
+                                <h4><i class="fas fa-info-circle"></i> Did You Know?</h4>
+                                <p>In 2026, NASA's Europa Clipper will arrive at Jupiter to study its moon Europa, which has a subsurface ocean that could harbor life.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Memory Panel -->
+            <section class="panel memory-panel">
+                <div class="panel-header">
+                    <h2><i class="fas fa-brain"></i> Memory System</h2>
+                    <button class="panel-btn" id="refresh-memory" title="Refresh Memory">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+                <div class="panel-body">
+                    <div class="memory-stats">
+                        <div class="memory-stat">
+                            <span class="stat-label">Your Name</span>
+                            <span class="stat-value" id="memory-name">Not set</span>
+                        </div>
+                        <div class="memory-stat">
+                            <span class="stat-label">Conversations</span>
+                            <span class="stat-value" id="memory-conversations">1</span>
+                        </div>
+                        <div class="memory-stat">
+                            <span class="stat-label">Preferences</span>
+                            <span class="stat-value" id="memory-preferences">Default</span>
+                        </div>
+                    </div>
+                    <div class="memory-controls">
+                        <button class="memory-btn" id="set-name-btn">
+                            <i class="fas fa-user-edit"></i> Set Name
+                        </button>
+                        <button class="memory-btn" id="reset-memory-btn">
+                            <i class="fas fa-eraser"></i> Reset Memory
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-info">
+                <span class="footer-text">ANISHA v2.6.1 | Neural Network: Active</span>
+                <span class="footer-text">Voice: <span id="current-voice">Calm Female</span></span>
+            </div>
+            <div class="footer-controls">
+                <button class="footer-btn" id="wake-toggle">
+                    <i class="fas fa-satellite-dish"></i>
+                    <span id="wake-status">Wake Word: Enabled</span>
+                </button>
+                <button class="footer-btn" id="quick-help">
+                    <i class="fas fa-question-circle"></i>
+                    Quick Help
+                </button>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Settings Modal -->
+    <div class="modal" id="settings-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-cog"></i> ANISHA Settings</h2>
+                <button class="modal-close" id="settings-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="settings-section">
+                    <h3><i class="fas fa-robot"></i> AI Configuration</h3>
+                    <div class="setting">
+                        <label for="ai-name-input">AI Name</label>
+                        <div class="setting-control">
+                            <input type="text" id="ai-name-input" value="ANISHA">
+                            <button class="setting-btn" id="save-ai-name">Save</button>
+                        </div>
+                    </div>
+                    <div class="setting">
+                        <label for="api-key-input">API Key</label>
+                        <div class="setting-control">
+                            <input type="password" id="api-key-input" placeholder="Enter your DeepSeek/OpenAI API key">
+                            <button class="setting-btn" id="save-api-key">Save</button>
+                        </div>
+                        <p class="setting-hint">Your API key is stored locally and never sent to our servers.</p>
+                    </div>
+                    <div class="setting">
+                        <label for="ai-model">AI Model</label>
+                        <select id="ai-model">
+                            <option value="deepseek-chat">DeepSeek Chat</option>
+                            <option value="gpt-4">GPT-4</option>
+                            <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+                            <option value="claude-3">Claude 3</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="settings-section">
+                    <h3><i class="fas fa-volume-up"></i> Voice & Sound</h3>
+                    <div class="setting">
+                        <label for="voice-speed">Voice Speed</label>
+                        <input type="range" id="voice-speed" min="0.5" max="2" step="0.1" value="1">
+                        <span class="range-value" id="voice-speed-value">1.0</span>
+                    </div>
+                    <div class="setting">
+                        <label for="voice-pitch">Voice Pitch</label>
+                        <input type="range" id="voice-pitch" min="0.5" max="2" step="0.1" value="1">
+                        <span class="range-value" id="voice-pitch-value">1.0</span>
+                    </div>
+                    <div class="setting">
+                        <div class="setting-checkbox">
+                            <input type="checkbox" id="sound-effects" checked>
+                            <label for="sound-effects">Enable UI Sound Effects</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="settings-section">
+                    <h3><i class="fas fa-user"></i> Personalization</h3>
+                    <div class="setting">
+                        <label for="user-name-input">Your Name</label>
+                        <div class="setting-control">
+                            <input type="text" id="user-name-input" placeholder="Enter your name">
+                            <button class="setting-btn" id="save-user-name">Save</button>
+                        </div>
+                    </div>
+                    <div class="setting">
+                        <label for="ai-personality">AI Personality</label>
+                        <select id="ai-personality">
+                            <option value="calm">Calm & Professional</option>
+                            <option value="enthusiastic">Enthusiastic</option>
+                            <option value="technical">Technical & Precise</option>
+                            <option value="supportive">Supportive & Encouraging</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn secondary" id="reset-settings">Reset to Default</button>
+                <button class="modal-btn primary" id="save-settings">Save All Settings</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Quick Help Modal -->
+    <div class="modal" id="help-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-question-circle"></i> ANISHA Quick Help</h2>
+                <button class="modal-close" id="help-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="help-section">
+                    <h3><i class="fas fa-microphone"></i> Voice Commands</h3>
+                    <ul class="help-list">
+                        <li><strong>"Hey Anisha"</strong> - Activate voice listening</li>
+                        <li><strong>"Switch to programming mode"</strong> - Activate programming assistant</li>
+                        <li><strong"Explain black holes"</strong> - Switch to astronomy mode</li>
+                        <li><strong>"Stop listening"</strong> - Deactivate voice input</li>
+                        <li><strong>"Clear conversation"</strong> - Clear the chat</li>
+                    </ul>
+                </div>
+                <div class="help-section">
+                    <h3><i class="fas fa-code"></i> Programming Assistant</h3>
+                    <p>Ask me to:</p>
+                    <ul class="help-list">
+                        <li>Write code in any language</li>
+                        <li>Explain code step-by-step</li>
+                        <li>Debug errors in your code</li>
+                        <li>Generate full project structures</li>
+                        <li>Optimize algorithms</li>
+                    </ul>
+                </div>
+                <div class="help-section">
+                    <h3><i class="fas fa-star"></i> Astronomy Mode</h3>
+                    <p>I can explain:</p>
+                    <ul class="help-list">
+                        <li>Cosmology and astrophysics concepts</li>
+                        <li>2026 astronomical events</li>
+                        <li>Planetary movements and constellations</li>
+                        <li>Space exploration missions</li>
+                        <li>Black holes, neutron stars, and exoplanets</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Audio elements for sound effects -->
+    <audio id="sound-wake" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-robot-notification-911.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound-send" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-tech-laser-948.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound-receive" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-sci-fi-bleep-902.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound-mode" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-sci-fi-confirmation-914.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound-error" preload="auto">
+        <source src="https://assets.mixkit.co/sfx/preview/mixkit-warning-alarm-buzzer-959.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+                          </html>
